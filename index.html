@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techno Brain | Front-End Developer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+body{
+    line-height:1.6;
+    color:#333;
+    scroll-behavior:smooth;
+}
+
+/* ===== NAVBAR ===== */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,0.85);
+    padding:15px 0;
+    z-index:1000;
+    backdrop-filter: blur(10px);
+}
+
+nav{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+}
+
+nav h1{
+    color:#fff;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00e5ff;
+}
+
+/* ===== HERO SECTION ===== */
+.hero{
+    height:100vh;
+    background: linear-gradient(135deg,#00c6ff,#0072ff);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    padding:20px;
+}
+
+.hero h2{
+    font-size:40px;
+    margin-bottom:20px;
+    min-height:50px;
+}
+
+.hero p{
+    font-size:18px;
+    max-width:600px;
+    margin-bottom:30px;
+}
+
+.btn{
+    padding:12px 25px;
+    background:#fff;
+    color:#0072ff;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#000;
+    color:#fff;
+}
+
+/* ===== SECTION STYLE ===== */
+section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+/* ===== ABOUT ===== */
+.about{
+    text-align:center;
+}
+
+/* ===== SERVICES ===== */
+.services{
+    background:#f4f6f9;
+    text-align:center;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-top:40px;
+}
+
+.service-box{
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.service-box:hover{
+    transform:translateY(-10px);
+}
+
+.service-box h3{
+    margin-bottom:15px;
+    color:#0072ff;
+}
+
+/* ===== CONTACT ===== */
+.contact{
+    background: linear-gradient(135deg,#0072ff,#00c6ff);
+    color:#fff;
+    text-align:center;
+}
+
+form{
+    max-width:500px;
+    margin:30px auto 0;
+    display:flex;
+    flex-direction:column;
+}
+
+form input, form textarea{
+    padding:12px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:8px;
+}
+
+form button{
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    background:#fff;
+    color:#0072ff;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+form button:hover{
+    background:#000;
+    color:#fff;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+    .service-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+    nav ul{
+        display:none;
+        flex-direction:column;
+        background:rgba(0,0,0,0.9);
+        position:absolute;
+        top:60px;
+        right:0;
+        width:200px;
+        padding:20px;
+        border-radius:10px;
+    }
+    nav ul.active{
+        display:flex;
+    }
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+    .hero h2{
+        font-size:28px;
+    }
+}
+.menu-toggle{
+    display:none;
+    cursor:pointer;
+    font-size:24px;
+    color:#fff;
+}
+
+@media(max-width:600px){
+    .menu-toggle{
+        display:block;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<h1>Techno Brain</h1>
+<div class="menu-toggle">&#9776;</div>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<h2 id="typed-text"></h2>
+<p>I design and develop responsive, interactive, and premium websites that represent your brand professionally and attract more customers.</p>
+<a href="#contact" class="btn">Get In Touch</a>
+</section>
+
+<section id="about" class="about">
+<div class="container">
+<h2>About Me</h2>
+<p>I am a passionate Front-End Developer specializing in modern, responsive, and interactive website design using HTML, CSS, and JavaScript. My mission is to create clean and professional digital experiences.</p>
+</div>
+</section>
+
+<section id="services" class="services">
+<div class="container">
+<h2>My Services</h2>
+<div class="service-grid">
+<div class="service-box">
+<h3>Responsive Design</h3>
+<p>Mobile-friendly and modern layouts that work perfectly on all devices.</p>
+</div>
+<div class="service-box">
+<h3>Interactive UI</h3>
+<p>Smooth animations and engaging user experience for better conversion.</p>
+</div>
+<div class="service-box">
+<h3>Business Websites</h3>
+<p>Professional websites designed to build trust and attract customers.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<div class="container">
+<h2>Let’s Work Together</h2>
+<p>Ready to grow your business? Contact me today.</p>
+<form id="contact-form">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="5" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Techno Brain | Front-End Developer</p>
+</footer>
+
+<script>
+// ===== Smooth Scroll (for older browsers) =====
+document.querySelectorAll('nav ul li a').forEach(link=>{
+    link.addEventListener('click', e=>{
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({behavior:'smooth'});
+    });
+});
+
+// ===== Mobile Menu Toggle =====
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('nav ul');
+menuToggle.addEventListener('click', ()=>{
+    navMenu.classList.toggle('active');
+});
+
+// ===== Typing Animation =====
+const typedText = document.getElementById('typed-text');
+const words = ["Building Modern Websites That Grow Your Business"];
+let index = 0;
+let charIndex = 0;
+
+function type(){
+    if(charIndex < words[index].length){
+        typedText.textContent += words[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(type,80);
+    }
+}
+type();
+
+// ===== Form Validation + Alert =====
+const form = document.getElementById('contact-form');
+form.addEventListener('submit', e=>{
+    e.preventDefault();
+    alert('Thank you! Your message has been sent.');
+    form.reset();
+});
+</script>
+
+</body>
+</html>
